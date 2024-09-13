@@ -297,6 +297,8 @@ github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5 h1:0CwZNZbxp69SHPd
 github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5/go.mod h1:wHh0iHkYZB8zMSxRWpUBQtwG5a7fFgvEO+odwuTv2gs=
 github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a h1:idn718Q4B6AGu/h5Sxe66HYVdqdGu2l9Iebqhi/AEoA=
 github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a/go.mod h1:lB+ZfQJz7igIIfQNfa7Ml4HSf2uFQQRzpGGRXenZAgY=
+github.com/atlanhq/runc v1.1.12-k3s2 h1:002a0Slud6xXzG4J/zAstAyyKm+PLYWAvd+G1NcrEHE=
+github.com/atlanhq/runc v1.1.12-k3s2/go.mod h1:S+lQwSfncpBha7XTy/5lBwWgm5+y5Ma/O44Ekby9FK8=
 github.com/avast/retry-go/v4 v4.6.0 h1:K9xNA+KeB8HHc2aWFuLb25Offp+0iVRXEvFx8IinRJA=
 github.com/avast/retry-go/v4 v4.6.0/go.mod h1:gvWlPhBVsvBbLkVGDg/KwvBv0bEkCOLRRSHKIr2PyOE=
 github.com/bahlo/generic-list-go v0.2.0 h1:5sz/EEAK+ls5wF+NeqDpk5+iNdMDXrh3z3nPnH1Wvgk=
@@ -1004,8 +1006,6 @@ github.com/k3s-io/kubernetes/staging/src/k8s.io/mount-utils v1.31.0-k3s3 h1:8ZpG
 github.com/k3s-io/kubernetes/staging/src/k8s.io/mount-utils v1.31.0-k3s3/go.mod h1:p5r0u2M9KzooTgHDz4zRsUt02y4Yx7/5uPwgr0nSGqg=
 github.com/k3s-io/kubernetes/staging/src/k8s.io/pod-security-admission v1.31.0-k3s3 h1:LCZWmkBHHA3CZb5uEM7/ThQY2IKHHGFbV/rkAEK6m8s=
 github.com/k3s-io/kubernetes/staging/src/k8s.io/pod-security-admission v1.31.0-k3s3/go.mod h1:nOJes2FVv6qZXUU3CGubLnloPJVV4rZ+jm0bLRCKKOM=
-github.com/k3s-io/runc v1.1.12-k3s1 h1:p2x48K2BbRdF8crLEB4xoJ1pdjSprlvNNGpYBBULHL4=
-github.com/k3s-io/runc v1.1.12-k3s1/go.mod h1:S+lQwSfncpBha7XTy/5lBwWgm5+y5Ma/O44Ekby9FK8=
 github.com/k3s-io/spegel v0.0.23-0.20240516234953-f3d2c4072314 h1:TrZb/yM0OtBuifPXlKaOfcxpJqzakA8+KsoO4c69ZLM=
 github.com/k3s-io/spegel v0.0.23-0.20240516234953-f3d2c4072314/go.mod h1:bMHfSjj1+Zf5VITCZe/wLjuni6rYAj/DjPU/kIVnhfA=
 github.com/karrick/godirwalk v1.17.0 h1:b4kY7nqDdioR/6qnbHQyDvmA17u5G1cZ6J+CZXwSWoI=
