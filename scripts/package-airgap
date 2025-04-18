@@ -11,10 +11,16 @@ fi
 
 airgap_image_file='scripts/airgap/image-list.txt'
 images=$(cat "${airgap_image_file}")
+
+echo "Pulling images"
 xargs -n1 docker pull <<< "${images}"
+echo "Saving images to dist/artifacts/k3s-airgap-images-${ARCH}.tar"
 docker save ${images} -o dist/artifacts/k3s-airgap-images-${ARCH}.tar
+echo "Compressing images"
 zstd --no-progress -T0 -16 -f --long=25 dist/artifacts/k3s-airgap-images-${ARCH}.tar -o dist/artifacts/k3s-airgap-images-${ARCH}.tar.zst
-pigz -v -c dist/artifacts/k3s-airgap-images-${ARCH}.tar > dist/artifacts/k3s-airgap-images-${ARCH}.tar.gz
+echo "Checking arch"
 if [ ${ARCH} = amd64 ]; then
+  echo "Copying image list"
   cp "${airgap_image_file}" dist/artifacts/k3s-images.txt
 fi
+echo "Done"
