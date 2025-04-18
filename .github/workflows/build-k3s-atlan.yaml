@@ -1,0 +1,49 @@
+name: Build K3s
+
+on:
+  push:
+    branches:
+      - test-branch
+      - atlan-1.31.5
+
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout K3s
+        uses: actions/checkout@v4
+
+      - name: Build K3s binary
+        run: |
+          DOCKER_BUILDKIT=1 SKIP_VALIDATE=1 GOCOVER=1 make
+          sha256sum dist/artifacts/k3s | sed 's|dist/artifacts/||' > dist/artifacts/k3s.sha256sum
+          ls -la dist/artifacts
+
+
+      - name: "Save K3s image"
+        run: docker image save rancher/k3s -o ./dist/artifacts/k3s-image.tar
+      - name: "Upload K3s Artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: k3s
+          path: dist/artifacts/k3s*
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::024630551114:role/gh-action-role
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: us-east-1
+
+      - name: Upload K3s binary to S3
+        run: |
+          aws s3 cp dist/artifacts/k3s s3://atlan-public/workflow-offline-agent/container-v1.31.5/k3s --region eu-west-1 --acl public-read
+          aws s3 cp dist/artifacts/k3s.sha256sum s3://atlan-public/workflow-offline-agent/container-v1.31.5/k3s.sha256sum --region eu-west-1 --acl public-read
+          aws s3 cp dist/artifacts/k3s-airgap-images-amd64.tar.zst s3://atlan-public/workflow-offline-agent/container-v1.31.5/k3s-airgap-images-amd64.tar.zst --region eu-west-1 --acl public-read
+          aws s3 cp dist/artifacts/k3s-images.txt s3://atlan-public/workflow-offline-agent/container-v1.31.5/k3s-images.txt --region eu-west-1 --acl public-read
