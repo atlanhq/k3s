@@ -84,8 +84,8 @@ spec:
           failureThreshold: 3
         securityContext:
           readOnlyRootFilesystem: true
-          runAsNonRoot: true
-          runAsUser: 1000
+          runAsNonRoot: false
+          runAsUser: 0
           allowPrivilegeEscalation: false
         volumeMounts:
         - name: tmp-dir
