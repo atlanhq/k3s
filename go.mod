@@ -1,7 +1,6 @@
 module github.com/k3s-io/k3s
 
 go 1.23.6
-
 replace (
 	github.com/Microsoft/hcsshim => github.com/Microsoft/hcsshim v0.12.9
 	github.com/Mirantis/cri-dockerd => github.com/k3s-io/cri-dockerd v0.3.15-k3s1.32-1 // v1.32.0-k3s1
@@ -150,10 +149,10 @@ require (
 	go.uber.org/mock v0.5.0
 	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.37.0
-	golang.org/x/mod v0.23.0
-	golang.org/x/net v0.39.0
-	golang.org/x/sync v0.13.0
-	golang.org/x/sys v0.32.0
+	golang.org/x/mod v0.42.0
+	golang.org/x/net v0.59.0
+	golang.org/x/sync v0.23.0
+	golang.org/x/sys v0.48.0
 	google.golang.org/grpc v1.71.1
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/api v0.32.3
@@ -472,7 +471,7 @@ require (
 	golang.org/x/term v0.30.0 // indirect
 	golang.org/x/text v0.23.0 // indirect
 	golang.org/x/time v0.10.0 // indirect
-	golang.org/x/tools v0.30.0 // indirect
+	golang.org/x/tools v0.51.0 // indirect
 	golang.zx2c4.com/wireguard v0.0.0-20231211153847-12269c276173 // indirect
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10 // indirect
 	gonum.org/v1/gonum v0.15.0 // indirect
