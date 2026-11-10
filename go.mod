@@ -1,7 +1,6 @@
 module github.com/k3s-io/k3s
 
 go 1.23.6
-
 replace (
 	github.com/Microsoft/hcsshim => github.com/Microsoft/hcsshim v0.12.9
 	github.com/Mirantis/cri-dockerd => github.com/k3s-io/cri-dockerd v0.3.15-k3s1.32-1 // v1.32.0-k3s1
@@ -113,7 +112,7 @@ require (
 	github.com/k3s-io/api v0.1.0
 	github.com/k3s-io/helm-controller v0.16.10
 	github.com/k3s-io/kine v0.13.14
-	github.com/klauspost/compress v1.18.0
+	github.com/klauspost/compress v1.20.4
 	github.com/libp2p/go-libp2p v0.38.2
 	github.com/minio/minio-go/v7 v7.0.83
 	github.com/moby/sys/userns v0.1.0
